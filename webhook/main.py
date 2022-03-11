@@ -68,11 +68,17 @@ def main():
     result = send(endpoint, {
         "markdown": msg,
     })
-    return result
+    if result:
+        return 0
+    else:
+        return 2
 
 
 def send(endpoint: str, message: Any) -> bool:
     res = rq.post(endpoint, data=json.dumps(message), headers={
         'Content-Type': 'application/json'
     })
-    return res.status_code >= 200 and res.status_code < 300
+    if not (res.status_code >= 200 and res.status_code < 300):
+        print(res.content.decode('utf-8'))
+        return False
+    return True
