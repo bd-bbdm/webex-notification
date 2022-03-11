@@ -1,6 +1,9 @@
+import os
+
 import setuptools
 
-from webhook import version
+version = os.getenv('VERSION', 'v0.0.0')
+
 
 setuptools.setup(
     name="webEX_notify",

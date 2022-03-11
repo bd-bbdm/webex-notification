@@ -11,4 +11,4 @@ if [[ -z "$WEBEX_MESSAGE" ]]; then
 	export WEBEX_MESSAGE="$COMMIT_MESSAGE"
 fi
 
-exec webEX_notify
+webEX_notify
