@@ -1,0 +1,11 @@
+version: "3.5"
+services:
+  webex-webhook-dev:
+    build:
+      context: .
+      dockerfile: .devcontainer/Dockerfile
+    volumes:
+      - .:/src
+      - ~/.ssh:/root/.ssh
+    container_name: webex-webhook-dev
+    tty: true

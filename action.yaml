@@ -1,0 +1,9 @@
+name: 'Cisco Webex Teams Notify'
+description: 'This action will send a notification to Cisco Webex Teams'
+author: 'nozomi.nishinohara'
+runs:
+  using: 'docker'
+  image: 'docker://ghcr.io/nozomi-nishinohara/actions-webex-notify:v1.0.0'
+branding:
+  icon: 'bell'
+  color: 'yellow'
