@@ -34,8 +34,6 @@ jobs:
       - name: API Container Build and Push
         uses: docker/build-push-action@v2
         with:
-          context: .
-          file: container/web.dockerfile
           tags: ${{ env.DOCKER_IMAGE }}:${{ env.VERSION }}
           cache-from: type=registry,ref=${{ env.DOCKER_IMAGE }}:buildcache
           cache-to: type=registry,ref=${{ env.DOCKER_IMAGE }}:buildcache

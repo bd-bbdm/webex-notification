@@ -1,0 +1,24 @@
+name: Test
+
+on:
+  push:
+    branches:
+      - main
+      - releases/v*
+  pull_request:
+    branches:
+      - main
+      - releases/v*
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      
+      - name: Test webex teams notify
+        uses: ./
+        env:
+          WEBEX_WEBHOOK: ${{ secrets.WEBEX_WEBHOOK }}
+          WEBEX_MESSAGE: "Run number #${{ github.run_number }}"
