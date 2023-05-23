@@ -9,7 +9,7 @@ setuptools.setup(
     name="webEX_notify",
     version=version,
     install_requires=[
-        "requests==2.27.1",
+        "requests==2.31.0",
     ],
     entry_points={
         'console_scripts': [
